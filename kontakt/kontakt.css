@@ -1,0 +1,199 @@
+/* ---- Kontakt Page Refinement ---- */
+
+.kontakt-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 0 20px 100px 20px;
+}
+
+.kontakt-main .page-title {
+    font-size: clamp(40px, 8vw, 75px);
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 20px 0 60px 0;
+    letter-spacing: 1px;
+    color: #1a1a1a;
+}
+
+/* Grid layout */
+.contact-grid-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    width: 100%;
+    max-width: 1400px;
+    padding: 0 40px;
+    margin: 0 auto 30px auto;
+}
+
+.contact-info-col {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Base style for cards - White background, No gradients */
+.contact-card {
+    background: #f7f7f7;
+    border-radius: 12px;
+    padding: clamp(30px, 4vw, 50px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color: #1a1a1a;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease;
+    overflow: hidden;
+    position: relative;
+    border: none;
+    /* No outline by default */
+}
+
+.contact-grid-bottom .contact-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* Map card specialty */
+.map-card {
+    padding: 0;
+    min-height: 500px;
+    background: #f7f7f7;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    /* Map keeps the outline */
+}
+
+.map-card iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* Info Cards - Simplified icons */
+.info-card.location-card,
+.info-card.hours-card {
+    justify-content: center;
+    aspect-ratio: 4 / 3;
+}
+
+.contact-card .card-icon {
+    width: clamp(60px, 6vw, 90px);
+    height: clamp(60px, 6vw, 90px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    background: none;
+    /* Removed circle background */
+    border-radius: 0;
+}
+
+.contact-card .card-icon svg {
+    width: clamp(30px, 3.5vw, 60px);
+    /* Larger icon for info cards */
+    height: clamp(30px, 3.5vw, 60px);
+    color: #db006d;
+}
+
+.contact-card h3 {
+    font-size: clamp(20px, 3vw, 28px);
+    font-weight: 800;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #000;
+}
+
+.contact-card p {
+    font-size: clamp(15px, 2vw, 18px);
+    font-weight: 700;
+    color: #444;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Social Buttons Grid - square icons, white background, dark icons */
+.contact-grid-bottom {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px;
+    width: 100%;
+    max-width: 1400px;
+    padding: 0 40px;
+    margin: 0 auto;
+}
+
+.contact-grid-bottom .contact-card {
+    padding: 0;
+    aspect-ratio: 1;
+    /* perfect square */
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.contact-grid-bottom .contact-card .card-icon {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-grid-bottom .contact-card .card-icon svg {
+    width: 45%;
+    height: 45%;
+    color: #db006d;
+    /* Pink icons */
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-grid-bottom .contact-card:hover .card-icon svg {
+    transform: scale(1.15);
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+    .contact-grid-top {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+    }
+
+    .map-card {
+        min-height: auto;
+        aspect-ratio: 1 / 1;
+    }
+
+    .info-card.location-card,
+    .info-card.hours-card {
+        aspect-ratio: auto;
+        padding: 40px 20px;
+    }
+
+    .contact-grid-bottom {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-main .page-title {
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-grid-bottom {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+}

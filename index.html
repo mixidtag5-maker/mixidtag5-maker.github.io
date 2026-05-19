@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konsolownia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="header-wrapper">
+        <div class="header-accent"></div>
+        <nav class="header">
+            <div class="logo-container">
+                <img src="images/konsolownia.png" alt="Konsolownia Logo">
+            </div>
+            <div class="hamburger" role="button" aria-label="Menu" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">USŁUGI</a></li>
+                <li><a href="akcesoria/">PADY & AKCESORIA</a></li>
+                <li><a href="wysylka/">WYSYŁKA</a></li>
+                <li><a href="kontakt/">KONTAKT</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main>
+        <div class="top-cards">
+            <div class="card-container">
+                <div class="circle blue-circle-1"></div>
+                <div class="circle blue-circle-2"></div>
+                <div class="circle blue-circle-3"></div>
+                <div class="circle blue-circle-4"></div>
+                <div class="circle blue-circle-5"></div>
+
+                <div class="card blue-card">
+                    <img src="images/section-01.png" alt="PS5 Controllers" class="product-img">
+                    <div class="card-text">
+                        <h2>POCZUJ RÓŻNICĘ<br>NA TWOICH PALCACH</h2>
+                        <p>ANALOGI TMR</p>
+                        <div class="price">150 PLN</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-container">
+                <div class="circle green-circle-1"></div>
+                <div class="circle green-circle-2"></div>
+                <div class="circle green-circle-3"></div>
+                <div class="circle green-circle-4"></div>
+                <div class="circle green-circle-5"></div>
+
+                <div class="card green-card">
+                    <img src="images/xbox1.png" alt="Xbox Controllers" class="product-img">
+                    <div class="card-text">
+                        <h2>TAKŻE DLA<br>FANÓW ZIELONYCH!</h2>
+                        <p>ANALOGI TMR</p>
+                        <div class="price">150 PLN</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="gray-grid">
+            <div class="card gray-card grid-span-full">
+                <img src="images/grzybki.png" alt="Turbo grzybki do pada" class="product-img">
+                <div class="card-text">
+                    <h2>Chcesz miec lepszy grip?</h2>
+                    <p>turbo grzybki (montaż)</p>
+                    <div class="price">50 PLN</div>
+                </div>
+            </div>
+            <div class="card gray-card animated-bg-card grid-span-large">
+                <div class="image-slider">
+                    <img src="images/ps5.png" alt="PlayStation 5" class="product-img">
+                    <img src="images/xboxseries.png" alt="Xbox Series" class="product-img">
+                    <img src="images/ps3.png" alt="PlayStation 3" class="product-img">
+                    <img src="images/xbox360.png" alt="Xbox 360" class="product-img">
+                </div>
+                <div class="card-text">
+                    <h2>Chcesz aby last-gen<br>konsola wyglądała jak nowa?</h2>
+                    <p>Czyszczenie spa</p>
+                    <div class="price">150 PLN</div>
+                </div>
+            </div>
+            <div class="card gray-card gray-card-ps5 grid-span-small">
+                <img src="images/ps5_hot.png" alt="Konsola PS5 przed naprawą" class="product-img">
+                <div class="card-text">
+                    <h2>Konsola nie działa tak jak dawniej?</h2>
+                    <p>Czyszczenie i ciekły metal</p>
+                    <div class="price">250 PLN</div>
+                </div>
+            </div>
+            <div class="card gray-card gray-card-xbox grid-span-small">
+                <img src="images/xbox_hot.png" alt="Konsola Xbox przed naprawą" class="product-img">
+                <div class="card-text">
+                    <h2>Nie jest kompatybilna z ciekłym metalem?</h2>
+                    <p>Czyszczenie i pasta</p>
+                    <div class="price">250 PLN</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header-wrapper');
+            if (window.scrollY > 10) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        hamburger.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                navLinks.classList.toggle('active');
+                hamburger.classList.toggle('active');
+            }
+        });
+    </script>
+</body>
+
+</html>
